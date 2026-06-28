@@ -1,0 +1,260 @@
+CONTEXTO E OBJETIVO
+
+Construa uma página de vendas (landing page) de página única, estática, em HTML + CSS + JavaScript puro (sem frameworks, sem build step), pronta pra subir no GitHub e deployar na Vercel sem configuração.
+
+A página vende uma planilha de precificação para técnicos de refrigeração, linha branca e elétrica no Brasil. O público é técnico autônomo / pequena assistência, vem de tráfego pago (Instagram/Meta), navega majoritariamente no celular e é sensível a preço. A dor central: trabalha muito e sobra pouco porque cobra errado.
+
+A marca é "Tiago Sheik" — identidade visual preto e dourado, tom firme, direto, de autoridade, técnico falando com técnico.
+
+São duas opções de compra, e a PRO deve ser visualmente a escolha óbvia:
+
+
+Opção 1 — Só a Planilha: R$ 9,90
+Opção 2 — PRO (destacada): R$ 37 — Planilha + Kit Fechamento de Orçamento
+
+
+
+STACK E ESTRUTURA DE ARQUIVOS
+
+
+Sem framework. HTML5 + CSS3 + JS vanilla.
+Estrutura mínima:
+
+
+  /index.html
+  /styles.css
+  /script.js
+  /assets/   (imagens; deixe placeholders se eu não fornecer)
+  /favicon.ico  (placeholder)
+  /README.md  (instruções curtas de deploy)
+
+
+Tudo deve funcionar abrindo index.html direto no navegador (sem servidor). A Vercel serve a pasta como site estático automaticamente — não use Next.js nem nada que exija build.
+Use Google Fonts via <link> no <head> (não exija instalação local).
+
+
+
+SISTEMA DE DESIGN (PRETO E OURO — MARCA SHEIK)
+
+Cores (use variáveis CSS em :root):
+
+
+Fundo principal: #0A0A0A (preto profundo)
+Fundo de seção alternada: #141414
+Dourado primário (CTAs, destaques): #D4AF37
+Dourado claro (hover/detalhes): #E8C766
+Texto principal: #F5F5F5
+Texto secundário/apoio: #B0B0B0
+Verde de "confirmação/economia": #3FB950
+Vermelho sutil de "dor/alerta": #E5534B
+
+
+Tipografia (Google Fonts):
+
+
+Títulos: Montserrat (pesos 700, 800, 900) — forte, com autoridade.
+Corpo: Inter (400, 500, 600) — limpo e legível.
+
+
+Estilo geral:
+
+
+Visual premium, escuro, com o dourado usado com parcimônia (só em CTAs, números de preço, ícones e detalhes — dourado demais vira cafona).
+Botões primários: fundo dourado, texto preto, cantos arredondados (8–12px), sombra suave, leve animação no hover (subir 2px + brilho).
+Bordas e divisórias sutis em dourado de baixa opacidade.
+Boa respiração: bastante espaçamento vertical entre seções.
+Mobile-first. Desenhe pro celular primeiro, depois adapte pra desktop. A maioria do tráfego é mobile.
+
+
+
+REQUISITOS TÉCNICOS
+
+
+100% responsivo, mobile-first. Testar em 360px, 768px e 1280px de largura.
+Botão de CTA fixo (sticky) no rodapé em telas mobile: barra fixa com "Quero a versão PRO — R$37" que acompanha a rolagem.
+Performance: sem bibliotecas pesadas; imagens com loading="lazy"; CSS e JS enxutos.
+SEO básico: <title>, <meta name="description">, Open Graph tags (og:title, og:description, og:image) pra ficar bonito quando compartilhar no WhatsApp/Instagram.
+Acessibilidade: contraste adequado, alt em imagens, tamanho de fonte legível (corpo mínimo 16px).
+Slots de rastreamento: deixe comentários <!-- META PIXEL AQUI --> e <!-- GOOGLE TAG AQUI --> no <head>, e dispare um evento de clique nos botões de checkout (função JS trackCheckout(plano)) que eu vou plugar depois no pixel. Por enquanto a função só faz console.log.
+Animações sutis de aparição ao rolar (fade-in nas seções) com IntersectionObserver — nada exagerado.
+
+
+
+COMPORTAMENTO DOS BOTÕES DE CHECKOUT
+
+Os pagamentos acontecem numa plataforma externa de checkout (tipo Kiwify/Hotmart). A página não processa pagamento nenhum — os botões só redirecionam pro checkout. Use estes placeholders, que eu vou substituir:
+
+
+Botão "Só a Planilha — R$9,90" → href="{{LINK_CHECKOUT_PLANILHA}}"
+Botão "Versão PRO — R$37" → href="{{LINK_CHECKOUT_PRO}}"
+
+
+Todos os CTAs da página (hero, meio, final, sticky) devem apontar pro checkout PRO por padrão, exceto os botões dentro do bloco de comparação de preços, que apontam pra opção correspondente.
+
+
+ESTRUTURA DA PÁGINA E COPY (USE EXATAMENTE ESTE TEXTO)
+
+1. HERO (primeira dobra)
+
+
+Pequeno selo/eyebrow acima do título: "PARA TÉCNICOS DE REFRIGERAÇÃO, LINHA BRANCA E ELÉTRICA"
+Título (H1): "Você trabalha o mês inteiro e, no fim, sobra quase nada?"
+Subtítulo: "A planilha de precificação que mostra, em minutos, quanto você REALMENTE precisa cobrar em cada serviço — pra cobrir todos os seus custos, garantir o seu lucro e nunca mais trabalhar de graça."
+CTA primário: "QUERO PRECIFICAR CERTO →" (aponta pro checkout PRO)
+Abaixo do botão, em texto pequeno: "Acesso imediato · Funciona no celular e no computador · Garantia de 7 dias"
+Espaço pra um mockup da planilha à direita (desktop) / abaixo (mobile): use placeholder assets/mockup-planilha.png.
+
+
+2. A DOR (agitação do problema)
+
+
+Título: "O seu problema não é falta de serviço. É preço."
+Texto: "A maioria dos técnicos calcula o preço do mesmo jeito: a peça, mais 'a minha hora'. E é exatamente aí que o lucro vaza. Porque nessa conta some o combustível, some a ferramenta que um dia vai estragar, some o imposto, some o tempo parado no trânsito, some o orçamento que você fez e não fechou. Você acha que lucrou — mas, na real, trabalhou quase de graça. E o pior: nem percebeu."
+Uma lista de "custos invisíveis" com ícones (4 a 6 itens): Combustível e deslocamento · Depreciação das ferramentas · Impostos e taxas · Tempo improdutivo (trânsito, orçamentos) · Garantia e retornos · Marketing pra conseguir cliente.
+Frase de impacto destacada em dourado: "Cada serviço cobrado errado é um buraco no seu bolso que você não enxerga."
+
+
+3. A SOLUÇÃO (apresenta a planilha)
+
+
+Título: "Pare de chutar. Comece a cobrar como quem manda."
+Texto: "Essa planilha faz a conta pesada por você. Você preenche os seus custos uma vez, e ela te entrega o número exato que você precisa cobrar pra ter lucro de verdade. Sem fórmula complicada, sem mistério. É só preencher os campos e usar."
+Bloco de recursos (grid de cards, 6 itens, cada um com ícone, título e 1 linha):
+
+Sua Hora Técnica Real — descobre o valor mínimo, ideal e premium da sua hora, com o seu lucro já embutido.
+29 Serviços Já Precificados — catálogo de ar-condicionado, geladeira, lavadora e refrigeração comercial com preço automático.
+Orçamento em Minutos — preencha os campos e gere um orçamento profissional completo pra mandar pro cliente.
+Catálogo de Peças com Margem Certa — calcula o preço de venda de cada peça com custo, frete e margem.
+Calculadora de Deslocamento — cobra o km rodado e o pedágio do jeito certo, sem prejuízo.
+Painel de Indicadores — acompanhe ticket médio, faturamento e margem pra crescer com dados.
+
+
+
+
+
+4. AS DUAS OPÇÕES (bloco de preço — o coração da página)
+
+
+Título: "Escolha como você quer começar"
+Dois cards lado a lado (no mobile, empilhados com o PRO em cima):
+
+
+Card 1 — Planilha (básico, visualmente "menor"):
+
+
+Nome: "Só a Planilha"
+Preço: R$ 9,90 (à vista)
+Inclui:
+
+✓ Planilha de Precificação completa
+✓ Hora técnica + 29 serviços + peças + deslocamento
+✓ Acesso imediato
+
+
+
+Botão (estilo secundário, contorno): "Quero só a planilha" → {{LINK_CHECKOUT_PLANILHA}}
+
+
+Card 2 — PRO (DESTACADO: borda dourada, leve escala maior, selo "MAIS ESCOLHIDA" no topo):
+
+
+Nome: "Planilha PRO"
+Preço: R$ 37 (à vista) — mostrar também "ou no cartão" em texto pequeno
+Inclui:
+
+✓ Tudo da planilha completa, mais:
+✓ Kit Fechamento de Orçamento — modelo profissional de orçamento editável pra mandar pro cliente e passar autoridade
+✓ Scripts de WhatsApp prontos — mensagens de envio do orçamento + follow-up pra cobrar o cliente sumido sem parecer chato
+
+
+
+Linha de reforço em dourado: "Não basta calcular o preço certo — você precisa FECHAR o cliente."
+Botão (primário, dourado): "QUERO A VERSÃO PRO — R$37 →" → {{LINK_CHECKOUT_PRO}}
+Microcopy abaixo: "Por menos de um lanche você leva a ferramenta que calcula E a ferramenta que fecha."
+
+
+5. DETALHE DO BÔNUS PRO (reforça o valor do upgrade)
+
+
+Título: "O que vem no Kit Fechamento de Orçamento"
+Texto curto + 2 cards:
+
+Modelo de Orçamento Profissional — "Um template pronto pra você preencher com os dados do cliente e o valor da planilha, e enviar pelo WhatsApp. Passa muito mais profissionalismo do que mandar o preço digitado no chat."
+Scripts de WhatsApp (Envio + Follow-up) — "Mensagens copiáveis pra apresentar o orçamento com firmeza e pra cobrar o cliente que sumiu — sem parecer desesperado e sem dar desconto no susto."
+
+
+
+
+
+6. GARANTIA
+
+
+Selo/ícone de escudo dourado.
+Título: "Risco zero: 7 dias de garantia"
+Texto: "Compre, use, teste na prática. Se em 7 dias você achar que não vale cada centavo, é só pedir o reembolso. Todo o risco é meu, não seu."
+
+
+7. PRA QUEM É / PRA QUEM NÃO É
+
+
+Duas colunas:
+
+É pra você se: é técnico de refrigeração, linha branca ou elétrica · trabalha muito e não sabe pra onde vai o dinheiro · cobra "no olho" e quer parar de chutar · quer começar a tratar o serviço como negócio.
+Não é pra você se: procura fórmula mágica sem preencher nada · não quer organizar os próprios custos · acha que cobrar barato é o que segura cliente (esse curso vai te mostrar o contrário, mas só funciona se você aplicar).
+
+
+
+
+
+8. FAQ (acordeão expansível em JS)
+
+
+"Preciso saber mexer em Excel?" → "Não. Você só preenche os campos amarelos. As contas a planilha faz sozinha. Funciona no Excel, no Google Sheets e em apps de celular."
+"Funciona no celular?" → "Sim. Você pode usar no computador ou no celular, onde for mais prático pra você."
+"Serve pra qual área?" → "Refrigeração, climatização, linha branca (geladeira, lavadora, freezer) e refrigeração comercial. Dá pra adaptar pra outros serviços técnicos."
+"Como eu recebo depois de comprar?" → "O acesso é imediato. Assim que o pagamento é confirmado, você recebe o arquivo pra baixar."
+"Qual a diferença da versão PRO?" → "A PRO inclui o Kit Fechamento de Orçamento: o modelo de orçamento profissional e os scripts de WhatsApp pra você não só calcular o preço certo, mas fechar o cliente."
+"E se eu não gostar?" → "Você tem 7 dias de garantia. Não curtiu, devolvo o seu dinheiro."
+
+
+9. CTA FINAL
+
+
+Título: "O seu próximo orçamento pode ser o primeiro que você cobra certo."
+Texto: "Você já trabalha duro demais pra continuar ganhando de menos. A conta certa tá a um clique."
+Botão primário grande: "QUERO A VERSÃO PRO — R$37 →"
+Link discreto abaixo: "ou levar só a planilha por R$9,90"
+
+
+10. RODAPÉ
+
+
+Logo/nome "Tiago Sheik" em dourado.
+Linha: "Ferramentas e gestão para técnicos que querem mandar no próprio negócio."
+Links: Instagram (@tiagooliveiratecnico), YouTube. (placeholders #)
+Texto legal pequeno: "© 2026 Tiago Sheik. Todos os direitos reservados." + links placeholder "Termos de Uso" e "Política de Privacidade".
+
+
+
+ENTREGÁVEIS E INSTRUÇÕES FINAIS
+
+
+Gere os arquivos completos e funcionais (index.html, styles.css, script.js, README.md).
+No README.md, inclua: como abrir localmente, onde trocar os 2 links de checkout ({{LINK_CHECKOUT_PLANILHA}} e {{LINK_CHECKOUT_PRO}}), onde colar os pixels de rastreamento, e os 3 passos pra deployar na Vercel (importar o repositório do GitHub → framework "Other / Static" → deploy).
+Use placeholders nomeados e fáceis de achar (busca por {{ encontra todos).
+Comente no código os pontos que eu vou editar depois (links, pixels, imagens, textos de contato).
+Garanta que abre sem erros direto do index.html, sem servidor e sem dependências externas além das Google Fonts.
+
+
+
+CHECKLIST DE QUALIDADE (confira antes de finalizar)
+
+
+ Mobile-first, testado em 360px sem quebrar layout.
+ Card PRO visivelmente destacado e CTA dourado de alto contraste.
+ Botão sticky de CTA aparece no mobile ao rolar.
+ Todos os CTAs levam ao checkout correto via placeholder.
+ trackCheckout() dispara no clique de todos os botões de compra.
+ Meta tags de SEO e Open Graph preenchidas.
+ FAQ funciona (abre/fecha).
+ Sem erros no console; sem dependências que exijam build.
