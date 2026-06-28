@@ -152,7 +152,22 @@
       <h2>Escolha como você quer começar</h2>
 
       <div class="pricing-grid">
-        <!-- Card PRO (vem primeiro = destaque no mobile) -->
+        <!-- Card Básico -->
+        <div class="pricing-card">
+          <div class="pricing-name">Só a Planilha</div>
+          <div class="pricing-price">R$ 9,90</div>
+          <div class="pricing-price-sub">à vista</div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Planilha de Precificação completa</li>
+            <li><span class="check">✓</span> Hora técnica + 29 serviços + peças + deslocamento</li>
+            <li><span class="check">✓</span> Acesso imediato</li>
+          </ul>
+          <a href="{{LINK_CHECKOUT_PLANILHA}}" class="btn btn-secondary btn-large" onclick="trackCheckout('planilha')">
+            Quero só a planilha
+          </a>
+        </div>
+
+        <!-- Card PRO -->
         <div class="pricing-card pricing-card-pro">
           <div class="pricing-badge">MAIS ESCOLHIDA</div>
           <div class="pricing-name">Planilha PRO</div>
@@ -168,21 +183,6 @@
             QUERO A VERSÃO PRO — R$37 →
           </a>
           <p class="pricing-microcopy">Por menos de um lanche você leva a ferramenta que calcula E a ferramenta que fecha.</p>
-        </div>
-
-        <!-- Card Básico -->
-        <div class="pricing-card">
-          <div class="pricing-name">Só a Planilha</div>
-          <div class="pricing-price">R$ 9,90</div>
-          <div class="pricing-price-sub">à vista</div>
-          <ul class="pricing-features">
-            <li><span class="check">✓</span> Planilha de Precificação completa</li>
-            <li><span class="check">✓</span> Hora técnica + 29 serviços + peças + deslocamento</li>
-            <li><span class="check">✓</span> Acesso imediato</li>
-          </ul>
-          <a href="{{LINK_CHECKOUT_PLANILHA}}" class="btn btn-secondary btn-large" onclick="trackCheckout('planilha')">
-            Quero só a planilha
-          </a>
         </div>
       </div>
     </div>
