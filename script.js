@@ -47,10 +47,40 @@ function toggleFaq(button) {
   }
 }
 
-/* ── Tracking (placeholder para pixel) ── */
+/* ── Tracking (Meta Pixel + pronto p/ Google) ── */
 function trackCheckout(plano) {
+  try {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'InitiateCheckout', {
+        content_name: plano === 'pro' ? 'Planilha PRO' : 'Planilha Basica',
+        value: plano === 'pro' ? 37.00 : 9.90,
+        currency: 'BRL'
+      });
+    }
+    // Descomente quando instalar o Google Tag:
+    // if (typeof gtag !== 'undefined') gtag('event', 'begin_checkout', { value: plano === 'pro' ? 37 : 9.9, currency: 'BRL' });
+  } catch (e) { console.warn('[Track] erro', e); }
   console.log('[Track] Checkout iniciado — plano:', plano);
-  // FUTURO: disparar evento do pixel aqui
-  // Exemplo: if (typeof fbq !== 'undefined') fbq('track', 'Purchase', ...);
-  // Exemplo: if (typeof gtag !== 'undefined') gtag('event', 'purchase', ...);
 }
+
+/* ── Sticky CTA: só aparece depois do hero ── */
+(function () {
+  var sticky = document.getElementById('stickyCta');
+  if (!sticky) return;
+  // Esconde no desktop via CSS; no mobile controla por scroll
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    var precos = document.getElementById('precos');
+    var precosTop = precos ? precos.offsetTop : 99999;
+    // mostra após 500px, esconde quando o bloco de preço está visível (evita duplicar CTA)
+    if (y > 500 && y < precosTop - 200) {
+      sticky.classList.add('show');
+    } else if (y >= precosTop - 200) {
+      sticky.classList.remove('show');
+    } else {
+      sticky.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
