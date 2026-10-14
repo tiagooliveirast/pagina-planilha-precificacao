@@ -63,6 +63,79 @@ function trackCheckout(plano) {
   console.log('[Track] Checkout iniciado — plano:', plano);
 }
 
+/* ── Social Proof Popup: vendas simuladas em intervalo curto ──
+   CONFIG: ajuste aqui tempos e nomes. Intervalo 25-55s (média ~40s).
+   Para usar vendas reais depois, troque o array por fetch da sua API. */
+(function () {
+  var popup = document.getElementById('spPopup');
+  if (!popup) return;
+  var elName = document.getElementById('spName');
+  var elProduct = document.getElementById('spProduct');
+  var elTime = document.getElementById('spTime');
+  var elAvatar = document.getElementById('spAvatar');
+  var btnClose = document.getElementById('spClose');
+
+  // EDITE: nomes + cidades do seu público (técnicos)
+  var buyers = [
+    ['Carlos', 'Fortaleza/CE'], ['Diego', 'São Paulo/SP'], ['Anderson', 'Recife/PE'],
+    ['Marcos', 'Salvador/BA'], ['Paulo', 'Belo Horizonte/MG'], ['Rafael', 'Curitiba/PR'],
+    ['Lucas', 'Goiânia/GO'], ['Thiago', 'Manaus/AM'], ['Bruno', 'Rio de Janeiro/RJ'],
+    ['Felipe', 'Porto Alegre/RS'], ['João', 'Belém/PA'], ['Igor', 'Campinas/SP'],
+    ['Renan', 'Maceió/AL'], ['Everton', 'Florianópolis/SC'], ['Cláudio', 'Vitória/ES'],
+    ['Marcelo', 'Natal/RN'], ['Alex', 'João Pessoa/PB'], ['Rodrigo', 'Cuiabá/MT'],
+    ['Gustavo', 'Aracaju/SE'], ['Leandro', 'Teresina/PI'], ['Wesley', 'Santos/SP'],
+    ['Danilo', 'Osasco/SP'], ['Jean', 'São Luís/MA'], ['Maicon', 'Londrina/PR']
+  ];
+
+  var lastIndex = -1;
+  var closedForever = false;
+
+  function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+  function pickBuyer() {
+    var i;
+    do { i = rand(0, buyers.length - 1); } while (i === lastIndex);
+    lastIndex = i;
+    return buyers[i];
+  }
+
+  function showPopup() {
+    if (closedForever) return;
+    var b = pickBuyer();
+    var isPro = Math.random() < 0.8; // 80% PRO, 20% básica = empurra pro PRO
+    elName.textContent = b[0] + ' · ' + b[1];
+    elAvatar.textContent = b[0].charAt(0).toUpperCase();
+    elProduct.textContent = isPro ? 'Planilha PRO' : 'Planilha';
+    elTime.textContent = 'há ' + rand(1, 4) + ' min · via ' + (Math.random() < 0.6 ? 'Pix' : 'cartão') + ' ✓';
+    popup.classList.add('show');
+    // visível por 6s, depois esconde e agenda o próximo
+    setTimeout(hidePopup, 6000);
+  }
+
+  function hidePopup() {
+    popup.classList.remove('show');
+    scheduleNext();
+  }
+
+  function scheduleNext() {
+    if (closedForever) return;
+    // 25s a 55s aleatório (média ~40s, nunca passa de 1 min)
+    var next = rand(25000, 55000);
+    setTimeout(showPopup, next);
+  }
+
+  if (btnClose) {
+    btnClose.addEventListener('click', function () {
+      popup.classList.remove('show');
+      // Fecha só esse aviso; o ciclo continua. Para parar tudo, descomente:
+      // closedForever = true;
+      scheduleNext();
+    });
+  }
+
+  // Primeira aparição rápida: 8-12s após entrar (pega o visitante ainda no hero)
+  setTimeout(showPopup, rand(8000, 12000));
+})();
+
 /* ── Sticky CTA: só aparece depois do hero ── */
 (function () {
   var sticky = document.getElementById('stickyCta');
