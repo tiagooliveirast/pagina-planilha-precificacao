@@ -52,13 +52,13 @@ function trackCheckout(plano) {
   try {
     if (typeof fbq !== 'undefined') {
       fbq('track', 'InitiateCheckout', {
-        content_name: plano === 'pro' ? 'Planilha PRO' : 'Planilha Basica',
-        value: plano === 'pro' ? 37.00 : 9.90,
+        content_name: 'Planilha + Kit Fechamento',
+        value: 37.00,
         currency: 'BRL'
       });
     }
     // Descomente quando instalar o Google Tag:
-    // if (typeof gtag !== 'undefined') gtag('event', 'begin_checkout', { value: plano === 'pro' ? 37 : 9.9, currency: 'BRL' });
+    // if (typeof gtag !== 'undefined') gtag('event', 'begin_checkout', { value: 37, currency: 'BRL' });
   } catch (e) { console.warn('[Track] erro', e); }
   console.log('[Track] Checkout iniciado — plano:', plano);
 }
@@ -101,10 +101,9 @@ function trackCheckout(plano) {
   function showPopup() {
     if (closedForever) return;
     var b = pickBuyer();
-    var isPro = Math.random() < 0.8; // 80% PRO, 20% básica = empurra pro PRO
     elName.textContent = b[0] + ' · ' + b[1];
     elAvatar.textContent = b[0].charAt(0).toUpperCase();
-    elProduct.textContent = isPro ? 'Planilha PRO' : 'Planilha';
+    elProduct.textContent = 'Planilha + Kit Fechamento';
     elTime.textContent = 'há ' + rand(1, 4) + ' min · via ' + (Math.random() < 0.6 ? 'Pix' : 'cartão') + ' ✓';
     popup.classList.add('show');
     // visível por 6s, depois esconde e agenda o próximo
