@@ -342,6 +342,12 @@ h3 {
   margin-right: auto;
 }
 
+.pricing-offers {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .pricing-card {
   background: var(--bg-secondary);
   border-radius: var(--radius);
@@ -364,6 +370,17 @@ h3 {
 .pricing-card-pro:hover {
   border-color: var(--gold-light);
   transform: scale(1.03);
+}
+
+.pricing-card-basic .btn-secondary {
+  width: 100%;
+}
+
+.pricing-trust {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .pricing-badge {
@@ -915,8 +932,16 @@ h3 {
     margin-right: auto;
   }
 
+  .pricing-offers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-card-basic {
+    order: 2;
+  }
+
   .pricing-card-pro {
-    order: 0;
+    order: 1;
     transform: scale(1.04);
   }
 
@@ -989,6 +1014,18 @@ h3 {
     gap: 16px;
   }
 
+  .pricing-offers {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card-basic {
+    order: 2;
+  }
+
+  .pricing-card-pro {
+    order: 1;
+  }
+
   .pricing-card {
     padding: 20px 16px;
   }
@@ -1026,6 +1063,11 @@ h3 {
   .pricing-price-sub {
     font-size: 0.75rem;
     margin-bottom: 14px;
+  }
+
+  .pricing-trust {
+    font-size: 0.78rem;
+    margin-top: 12px;
   }
 
   .btn-large {

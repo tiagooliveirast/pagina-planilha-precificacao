@@ -26,6 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ── Preserva UTMs nos links de checkout ── */
+  var params = new URLSearchParams(window.location.search);
+  var src = params.get('src');
+  var sck = params.get('sck');
+  var checkoutLinks = document.querySelectorAll('a[href*="pay.hotmart.com/"]');
+
+  checkoutLinks.forEach(function (link) {
+    var url = new URL(link.href, window.location.origin);
+    if (src) url.searchParams.set('src', src);
+    if (sck) url.searchParams.set('sck', sck);
+    link.href = url.toString();
+  });
+
 
 
 });
@@ -50,15 +63,18 @@ function toggleFaq(button) {
 /* ── Tracking (Meta Pixel + pronto p/ Google) ── */
 function trackCheckout(plano) {
   try {
+    var isBasic = plano === 'basic';
+    var value = isBasic ? 9.90 : 37.00;
+    var contentName = isBasic ? 'Planilha de Precificação' : 'Planilha + Kit Fechamento';
     if (typeof fbq !== 'undefined') {
       fbq('track', 'InitiateCheckout', {
-        content_name: 'Planilha + Kit Fechamento',
-        value: 37.00,
+        content_name: contentName,
+        value: value,
         currency: 'BRL'
       });
     }
     // Descomente quando instalar o Google Tag:
-    // if (typeof gtag !== 'undefined') gtag('event', 'begin_checkout', { value: 37, currency: 'BRL' });
+    // if (typeof gtag !== 'undefined') gtag('event', 'begin_checkout', { value: value, currency: 'BRL' });
   } catch (e) { console.warn('[Track] erro', e); }
   console.log('[Track] Checkout iniciado — plano:', plano);
 }
