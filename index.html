@@ -6,309 +6,107 @@
   <title>Planilha de Precificação — Tiago Sheik | Pare de cobrar errado</title>
   <meta name="description" content="A planilha que mostra em minutos quanto cobrar em cada serviço. Pagamento único, acesso imediato, garantia de 7 dias. Para refrigeração, linha branca e elétrica." />
   <meta name="theme-color" content="#0A0A0A" />
-
-  <!-- Open Graph - TROQUE seudominio pela URL final -->
   <meta property="og:title" content="Planilha de Precificação — Tiago Sheik | 1 serviço certo paga 10x" />
   <meta property="og:description" content="Pare de chutar preço. Pagamento único, funciona no celular, garantia de 7 dias." />
   <meta property="og:image" content="assets/mockup-planilha.png" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1379799165897044');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', {content_name: 'Planilha Precificacao'});
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1379799165897044&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- GOOGLE TAG AQUI -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1379799165897044&ev=PageView&noscript=1" /></noscript>
 </head>
 <body>
-
-  <!-- BARRA DE OFERTA -->
-  <div class="announce-bar">
-    ⚡ OFERTA DE LANÇAMENTO: de <s>R$97</s> por <strong>R$37 pagamento único</strong> + Kit Fechamento <strong>GRÁTIS</strong> hoje
-  </div>
-
-  <!-- ==========================================
-       HERO
-  ========================================== -->
   <section class="hero section" id="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content fade-in">
-          <span class="hero-eyebrow">Para técnicos de refrigeração, linha branca e elétrica</span>
-          <h1>Você trabalha o mês inteiro e, no fim, <span class="gold-text">sobra quase nada?</span></h1>
-          <p class="hero-sub">
-            A planilha de precificação que mostra, em minutos, quanto você <strong>REALMENTE</strong> precisa cobrar em cada serviço — pra cobrir todos os seus custos, garantir o seu lucro e nunca mais trabalhar de graça.
-          </p>
-
-          <div class="roi-box">
-            <div class="roi-icon">💡</div>
-            <div><strong>1 único serviço precificado certo paga mais de 10x</strong> o valor da planilha. O resto do mês é lucro.</div>
-          </div>
-
-          <a href="#precos" class="btn btn-primary btn-large">
-            QUERO PRECIFICAR CERTO →
-          </a>
-          <p class="hero-cta-sub">Pagamento único · Acesso imediato · Garantia de 7 dias</p>
-
-          <div class="hero-proof">
-            <div class="stars">★★★★★ <span>4.9/5</span></div>
-            <p><strong>+320 técnicos</strong> já precificando com a planilha · Funciona no celular</p>
-          </div>
-
-          <p class="hero-meta">
-            <span>🔒 Compra segura via Hotmart</span>
-            <span>·</span>
-            <span>📱 Celular e PC</span>
-            <span>·</span>
-            <span>💳 Pix e cartão</span>
-          </p>
+          <span class="hero-eyebrow">Para técnicos de refrigeração e linha branca</span>
+          <h1>Você trabalha o mês inteiro e não sobra dinheiro?</h1>
+          <p class="hero-sub">O problema não é falta de serviço. É o preço que você cobra. Descubra em 10 minutos quanto você precisa cobrar pra ter lucro de verdade.</p>
+          <a href="#precos" class="btn btn-primary btn-large">QUERO PARAR DE COBRAR ERRADO →</a>
+          <p class="hero-meta"><span>⏱️ Acesso imediato</span><span>·</span><span>📱 Celular e computador</span><span>·</span><span>🛡️ Garantia de 7 dias</span></p>
         </div>
         <div class="hero-image-wrap fade-in">
-          <div class="hero-image">
-            <img src="assets/mockup-planilha.png" alt="Mockup da Planilha de Precificação Tiago Sheik" loading="eager" fetchpriority="high" />
-          </div>
-          <div class="float-card float-card-1">✅ Orçamento em minutos</div>
-          <div class="float-card float-card-2">🛡️ Garantia 7 dias</div>
+          <div class="hero-image"><img src="assets/mockup-planilha.png" alt="Mockup da Planilha de Precificação Tiago Sheik" loading="eager" fetchpriority="high" /></div>
+          <div class="float-card float-card-1">Preço certo</div>
+          <div class="float-card float-card-2">Garantia 7 dias</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       A DOR + EXEMPLO REAL
-  ========================================== -->
-  <section class="section section-alt" id="dor">
+  <section class="section section-alt" id="reconhece">
     <div class="container fade-in">
-      <h2>O seu problema não é falta de serviço. <span class="gold-text">É preço.</span></h2>
-      <p class="section-subtitle">
-        A maioria dos técnicos calcula o preço do mesmo jeito: a peça, mais "a minha hora". E é exatamente aí que o lucro vaza. Porque nessa conta some o combustível, some a ferramenta que um dia vai estragar, some o imposto, some o tempo parado no trânsito, some o orçamento que você fez e não fechou. Você acha que lucrou — mas, na real, trabalhou quase de graça. E o pior: nem percebeu.
-      </p>
-
-      <div class="example-box">
-        <div class="example-header">⚠️ EXEMPLO REAL — Limpeza de ar-condicionado</div>
-        <div class="example-grid">
-          <div class="example-col example-wrong">
-            <div class="example-label">Como você cobra hoje</div>
-            <div class="example-value">R$ 180</div>
-            <div class="example-desc">Peça + "sua hora" no olho</div>
-          </div>
-          <div class="example-arrow">→</div>
-          <div class="example-col example-right">
-            <div class="example-label">Quanto deveria cobrar</div>
-            <div class="example-value">R$ 290</div>
-            <div class="example-desc">+ deslocamento R$35 + taxas R$25 + lucro R$50</div>
-          </div>
-        </div>
-        <p class="example-loss">Prejuízo invisível: <strong>R$110 por serviço.</strong> Em 10 serviços no mês = <strong>R$1.100 jogados fora.</strong></p>
-      </div>
-
+      <h2>Você se reconhece em alguma dessas?</h2>
       <ul class="pain-list">
-        <li class="pain-item">
-          <span class="pain-icon">⛽</span>
-          <span><strong>Combustível e deslocamento</strong> — R$30-60 por visita que você absorve</span>
-        </li>
-        <li class="pain-item">
-          <span class="pain-icon">🔧</span>
-          <span><strong>Depreciação das ferramentas</strong> — um dia estraga e sai do seu bolso</span>
-        </li>
-        <li class="pain-item">
-          <span class="pain-icon">📋</span>
-          <span><strong>Impostos e taxas</strong> — maquininha, MEI, nota</span>
-        </li>
-        <li class="pain-item">
-          <span class="pain-icon">⏱️</span>
-          <span><strong>Tempo improdutivo</strong> — trânsito + orçamento que não fecha</span>
-        </li>
-        <li class="pain-item">
-          <span class="pain-icon">🔄</span>
-          <span><strong>Garantia e retornos</strong> — voltar de graça custa caro</span>
-        </li>
-        <li class="pain-item">
-          <span class="pain-icon">📢</span>
-          <span><strong>Marketing pra conseguir cliente</strong> — anúncio, panfleto, indicação</span>
-        </li>
+        <li class="pain-item"><span class="pain-icon">✕</span><span>Cobra "no olho" ou pelo preço do concorrente</span></li>
+        <li class="pain-item"><span class="pain-icon">✕</span><span>Fecha o mês cheio de serviço e a conta não fecha</span></li>
+        <li class="pain-item"><span class="pain-icon">✕</span><span>Dá desconto antes do cliente pedir, com medo de perder</span></li>
+        <li class="pain-item"><span class="pain-icon">✕</span><span>Paga combustível, ferramenta e imposto do próprio bolso sem perceber</span></li>
+        <li class="pain-item"><span class="pain-icon">✕</span><span>Não sabe se lucrou ou só trocou dinheiro</span></li>
       </ul>
-
-      <div class="pain-highlight">
-        "Cada serviço cobrado errado é um buraco no seu bolso que você não enxerga."
-      </div>
+      <div class="pain-highlight">Se marcou pelo menos uma, você está trabalhando de graça em parte dos seus serviços.</div>
     </div>
   </section>
 
-  <!-- ==========================================
-       A SOLUÇÃO + VEJA POR DENTRO
-  ========================================== -->
-  <section class="section" id="solucao">
+  <section class="section" id="dinheiro-some">
     <div class="container fade-in">
-      <h2>Pare de chutar. <span class="gold-text">Comece a cobrar como quem manda.</span></h2>
-      <p class="section-subtitle">
-        Essa planilha faz a conta pesada por você. Você preenche os seus custos <strong>uma única vez</strong>, e ela te entrega o número exato que você precisa cobrar pra ter lucro de verdade. Sem fórmula complicada, sem mistério. É só preencher os campos amarelos e usar.
-      </p>
+      <h2>Onde o seu dinheiro some</h2>
+      <p class="section-subtitle">Peça + mão de obra não é o seu preço. Nessa conta ficam de fora:</p>
+      <div class="chip-row"><span class="chip">Combustível</span><span class="chip">Desgaste de ferramenta</span><span class="chip">Imposto</span><span class="chip">Tempo no trânsito</span><span class="chip">Orçamento que não fechou</span><span class="chip">Garantia e retorno</span></div>
+      <div class="example-box"><div class="example-header">Exemplo ilustrativo</div><div class="example-loss">Higienização de split cobrada a R$ 150. Custo real + lucro mínimo: R$ 212.<br />R$ 62 perdidos por serviço. Em 20 serviços: R$ 1.240 por mês.</div></div>
+    </div>
+  </section>
 
-      <div class="how-grid">
-        <div class="how-step">
-          <div class="how-num">1</div>
-          <h3>Preencha seus custos</h3>
-          <p>Combustível, ferramentas, impostos, quanto quer ganhar. Uma vez só, em 10 min.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">2</div>
-          <h3>Veja sua hora real</h3>
-          <p>Descubra seu valor mínimo, ideal e premium — com lucro já embutido.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-num">3</div>
-          <h3>Gere e envie o orçamento</h3>
-          <p>Preço automático + modelo profissional + script de WhatsApp pra fechar.</p>
-        </div>
-      </div>
-
+  <section class="section section-alt" id="solucao">
+    <div class="container fade-in">
+      <h2>Você preenche uma vez. A planilha faz a conta pra sempre.</h2>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">💰</div>
-          <h3>Sua Hora Técnica Real</h3>
-          <p>Descobre o valor mínimo, ideal e premium da sua hora, com o seu lucro já embutido.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <h3>29 Serviços Já Precificados</h3>
-          <p>Catálogo de ar-condicionado, geladeira, lavadora e refrigeração comercial com preço automático.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Orçamento em Minutos</h3>
-          <p>Preencha os campos e gere um orçamento profissional completo pra mandar pro cliente.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📦</div>
-          <h3>Catálogo de Peças com Margem Certa</h3>
-          <p>Calcula o preço de venda de cada peça com custo, frete e margem.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🚛</div>
-          <h3>Calculadora de Deslocamento</h3>
-          <p>Cobra o km rodado e o pedágio do jeito certo, sem prejuízo.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Painel de Indicadores</h3>
-          <p>Acompanhe ticket médio, faturamento e margem pra crescer com dados.</p>
-        </div>
-      </div>
-
-      <div class="inside-cta">
-        <a href="#precos" class="btn btn-primary btn-large">QUERO PRECIFICAR CERTO →</a>
-        <p class="micro">Pagamento único · Sem mensalidade · Acesso vitalício</p>
+        <div class="feature-card"><h3>Sua hora técnica real</h3><p>Mínima, ideal e premium, com seu lucro embutido.</p></div>
+        <div class="feature-card"><h3>29 serviços com preço pronto</h3><p>Ar-condicionado, geladeira, lavadora e refrigeração comercial.</p></div>
+        <div class="feature-card"><h3>Peças e deslocamento sem prejuízo</h3><p>Margem certa na peça e km cobrado do jeito certo.</p></div>
+        <div class="feature-card"><h3>Orçamento em minutos</h3><p>Preenche os campos amarelos e o total sai na hora.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       PROVA SOCIAL
-  ========================================== -->
-  <section class="section section-alt" id="prova">
+  <section class="section" id="veja-por-dentro">
     <div class="container fade-in">
-      <h2>Quem já usa, <span class="gold-text">não volta a chutar preço</span></h2>
-      <p class="section-subtitle">Técnicos de campo, como você, que decidiram tratar o serviço como negócio.</p>
-
-      <div class="stats-bar">
-        <div class="stat"><strong>+320</strong><span>técnicos usando</span></div>
-        <div class="stat"><strong>4.9★</strong><span>avaliação média</span></div>
-        <div class="stat"><strong>29</strong><span>serviços precificados</span></div>
+      <h2>É assim por dentro</h2>
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button" data-lightbox-src="assets/mockup-planilha.png" data-lightbox-alt="Planilha de precificação"><img src="assets/mockup-planilha.png" alt="Planilha de precificação" /><span>Visão geral</span></button>
+        <button class="gallery-item" type="button" data-lightbox-src="assets/mockup-planilha.png" data-lightbox-alt="Linha de preços"><img src="assets/mockup-planilha.png" alt="Linha de preços" /><span>Hora técnica</span></button>
+        <button class="gallery-item" type="button" data-lightbox-src="assets/mockup-planilha.png" data-lightbox-alt="Orçamento na planilha"><img src="assets/mockup-planilha.png" alt="Orçamento na planilha" /><span>Orçamento</span></button>
       </div>
-
-      <div class="testi-grid">
-        <!-- TROQUE pelos depoimentos reais: nome, cidade, print -->
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Eu cobrava R$200 na instalação e achava que tava bom. A planilha mostrou que meu custo real era R$265. Hoje cobro R$320 e fecho mais que antes por causa do orçamento profissional."</p>
-          <div class="testi-author"><strong>Carlos M.</strong><span>Climatização · Fortaleza/CE</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p>"O que me vendeu foi o script de follow-up. Cliente que sumia agora responde. Recuperei 3 orçamentos na primeira semana, pagou a planilha umas 30 vezes."</p>
-          <div class="testi-author"><strong>Diego R.</strong><span>Linha branca · São Paulo/SP</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Nunca mexi com Excel direito e consegui preencher tudo pelo celular. Em 15 minutos já sabia minha hora técnica. Coisa que ninguém nunca me ensinou."</p>
-          <div class="testi-author"><strong>Anderson S.</strong><span>Refrigeração · Recife/PE</span></div>
-        </div>
-      </div>
-      <p class="testi-note">* Depoimentos ilustrativos — substitua pelos prints e vídeos reais dos seus clientes para máxima conversão.</p>
     </div>
   </section>
 
-  <!-- ==========================================
-       QUEM É TIAGO
-  ========================================== -->
-  <section class="section" id="autoridade">
+  <section class="section section-alt" id="autoridade">
     <div class="container fade-in">
       <div class="author-grid">
         <div class="author-photo">TS<!-- TROQUE por <img src="assets/tiago.png"> --></div>
         <div>
-          <h2>Quem fez isso pra você</h2>
-          <p class="section-subtitle" style="margin-bottom:16px"><strong class="gold-text">Tiago Sheik</strong> — técnico de campo, não guru de escritório.</p>
-          <p class="author-text">Trabalhei anos cobrando errado como você. Quebrei a cara com deslocamento de graça, ferramenta estourada e mês cheio com conta vazia. Organizei meus custos numa planilha, ajustei meus preços e virei o jogo. Agora empacotei tudo pra você não levar anos pra aprender — leva minutos.</p>
-          <p class="author-text">Sem enrolação. É a ferramenta que eu uso todo dia.</p>
+          <h2>Quem é o Tiago</h2>
+          <p class="author-text">Sou o Tiago Sheik, técnico há 18 anos. Criei essa planilha porque vi, na minha assistência e na de centenas de técnicos, que o problema quase nunca é falta de cliente — é preço errado.</p>
+          <div class="author-stats"><span>18 anos na área</span><span>+26 mil seguidores</span><span>+500 técnicos ajudados</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       BÔNUS (leva junto com a oferta)
-  ========================================== -->
-  <section class="section" id="bonus">
-    <div class="container fade-in">
-      <h2>O que vem no Kit Fechamento</h2>
-      <p class="section-subtitle">
-        Duas ferramentas que trabalham juntas: uma pra você calcular o preço certo, outra pra você <strong>fechar</strong> o cliente.
-      </p>
-
-      <div class="bonus-grid">
-        <div class="bonus-card">
-          <div class="bonus-value">Vale R$27 → GRÁTIS</div>
-          <h3>📄 Modelo de Orçamento Profissional</h3>
-          <p>Um template pronto pra você preencher com os dados do cliente e o valor da planilha, e enviar pelo WhatsApp. Passa muito mais profissionalismo do que mandar o preço digitado no chat.</p>
-        </div>
-        <div class="bonus-card">
-          <div class="bonus-value">Vale R$20 → GRÁTIS</div>
-          <h3>💬 Scripts de WhatsApp (Envio + Follow-up)</h3>
-          <p>Mensagens copiáveis pra apresentar o orçamento com firmeza e pra cobrar o cliente que sumiu — sem parecer desesperado e sem dar desconto no susto.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PREÇO — OFERTA ÚNICA
-  ========================================== -->
   <section class="section section-alt" id="precos">
     <div class="container fade-in">
-      <h2>Escolha como você quer começar</h2>
+      <h2>Escolha e comece a cobrar certo hoje</h2>
       <p class="section-subtitle">Pagamento único. Sem mensalidade. Acesso vitalício.</p>
-
       <div class="pricing-grid pricing-offers">
         <div class="pricing-card pricing-card-basic">
           <div class="pricing-name">Só a Planilha</div>
@@ -321,11 +119,8 @@
             <li><span class="check">✓</span> Peças, deslocamento e orçamento rápido</li>
             <li><span class="check">✓</span> Acesso imediato</li>
           </ul>
-          <a href="https://pay.hotmart.com/M106526584T?bid=1782667933578" class="btn btn-secondary btn-large" onclick="trackCheckout('basic')">
-            Quero só a planilha
-          </a>
+          <a href="https://pay.hotmart.com/M106526584T?bid=1782667933578" class="btn btn-secondary btn-large" onclick="trackCheckout('basic')">Quero só a planilha</a>
         </div>
-
         <div class="pricing-card pricing-card-pro">
           <div class="pricing-badge">MAIS ESCOLHIDA</div>
           <div class="pricing-name">Planilha + Kit Fechamento</div>
@@ -337,216 +132,42 @@
             <li><span class="check">✓</span> Scripts de WhatsApp de envio e follow-up pra cobrar o cliente que sumiu</li>
           </ul>
           <p class="pricing-reinforce"><em>Não basta calcular o preço certo — você precisa FECHAR o cliente.</em></p>
-          <a href="https://pay.hotmart.com/U106527215T?bid=1782667963381" class="btn btn-primary btn-large" onclick="trackCheckout('pro')">
-            Quero a planilha + kit — R$ 37 →
-          </a>
+          <a href="https://pay.hotmart.com/U106527215T?bid=1782667963381" class="btn btn-primary btn-large" onclick="trackCheckout('pro')">Quero a planilha + kit — R$ 37 →</a>
         </div>
       </div>
-      <div class="pricing-trust">Compra segura pela Hotmart · Garantia de 7 dias</div>
+      <div class="pricing-trust">Custa menos do que você perde em um único serviço cobrado errado.</div>
     </div>
   </section>
 
-  <!-- ==========================================
-       GARANTIA
-  ========================================== -->
   <section class="section section-alt guarantee" id="garantia">
     <div class="container fade-in">
-      <div class="guarantee-box">
-        <div class="guarantee-icon">🛡️</div>
-        <h2>Risco zero: 7 dias de garantia incondicional</h2>
-        <p>Compre, preencha, use no seu próximo orçamento. Se em 7 dias você achar que não vale <strong>10x os R$37</strong>, me manda um e-mail e eu devolvo cada centavo. Sem pergunta, sem burocracia.</p>
-        <p class="guarantee-ps"><strong>Na prática:</strong> se 1 serviço precificado certo já te dá R$100+ de lucro extra, você não tem como perder.</p>
-      </div>
+      <div class="guarantee-box"><div class="guarantee-icon">🛡️</div><h2>7 dias de garantia</h2><p>Use, teste no seu próximo orçamento. Se não valer, devolvo seu dinheiro.</p></div>
     </div>
   </section>
 
-  <!-- ==========================================
-       PRA QUEM É
-  ========================================== -->
-  <section class="section" id="paraquem">
-    <div class="container fade-in">
-      <h2>Pra quem é e pra quem não é</h2>
-
-      <div class="whom-grid">
-        <div class="whom-col" style="border-color: rgba(63,185,80,0.25);">
-          <h3 class="green-text">✅ É pra você se:</h3>
-          <ul>
-            <li><span class="whom-check">✓</span> É técnico de refrigeração, linha branca ou elétrica</li>
-            <li><span class="whom-check">✓</span> Trabalha muito e não sabe pra onde vai o dinheiro</li>
-            <li><span class="whom-check">✓</span> Cobra "no olho" e quer parar de chutar</li>
-            <li><span class="whom-check">✓</span> Quer começar a tratar o serviço como negócio</li>
-          </ul>
-        </div>
-        <div class="whom-col" style="border-color: rgba(229,83,75,0.25);">
-          <h3 class="red-text">✕ Não é pra você se:</h3>
-          <ul>
-            <li><span class="whom-cross">✕</span> Procura fórmula mágica sem preencher nada</li>
-            <li><span class="whom-cross">✕</span> Não quer organizar os próprios custos</li>
-            <li><span class="whom-cross">✕</span> Acha que cobrar barato é o que segura cliente</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       FAQ
-  ========================================== -->
   <section class="section section-alt" id="faq">
     <div class="container fade-in">
       <h2>Perguntas Frequentes</h2>
-
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            É pagamento único ou mensalidade?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p><strong>Pagamento único.</strong> Você paga uma vez (R$37 no PRO) e o acesso é seu pra sempre, com atualizações incluídas. Sem mensalidade.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Preciso saber mexer em Excel?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Não. Você só preenche os campos amarelos. As contas a planilha faz sozinha. Funciona no Excel, no Google Sheets e em apps de celular.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            E se eu nem sei quais são meus custos?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>A planilha te guia campo por campo com exemplos preenchidos. Em 10-15 minutos você organiza tudo, mesmo começando do zero.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Funciona no celular?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim. Você pode usar no computador ou no celular, onde for mais prático pra você. Ideal pra gerar orçamento na casa do cliente.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Serve pra qual área?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Refrigeração, climatização, linha branca (geladeira, lavadora, freezer) e refrigeração comercial. Dá pra adaptar pra outros serviços técnicos.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Como eu recebo depois de comprar?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>O acesso é imediato via Hotmart. Assim que o pagamento é confirmado (Pix aprova em segundos), você recebe o arquivo pra baixar + o Kit PRO no seu e-mail.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Qual a diferença entre as duas opções?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>A planilha sozinha calcula o seu preço certo. A opção com o Kit Fechamento inclui também o Modelo de Orçamento Profissional e os Scripts de WhatsApp, pra você não só calcular o preço, mas fechar o cliente.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            E se eu não gostar?
-            <span class="icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Você tem 7 dias de garantia incondicional. Não curtiu, é só pedir que eu devolvo seu dinheiro. O risco é todo meu.</p>
-          </div>
-        </div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Preciso saber Excel?<span class="icon">+</span></button><div class="faq-answer"><p>Não. Você só preenche os campos amarelos. A planilha faz as contas.</p></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Funciona no celular?<span class="icon">+</span></button><div class="faq-answer"><p>Sim. No app gratuito Google Planilhas ou no Excel do computador.</p></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Serve pra minha área?<span class="icon">+</span></button><div class="faq-answer"><p>Refrigeração, ar-condicionado, geladeira, lavadora e refrigeração comercial.</p></div></div>
+        <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Qual a diferença entre as duas opções?<span class="icon">+</span></button><div class="faq-answer"><p>A planilha calcula o preço certo. Com o Kit Fechamento você recebe também o modelo de orçamento e os scripts de WhatsApp pra fechar o cliente.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================
-       CTA FINAL
-  ========================================== -->
   <section class="section final-cta" id="cta-final">
     <div class="container fade-in">
-      <h2>O seu próximo orçamento pode ser o primeiro que você cobra certo.</h2>
-      <p>Você já trabalha duro demais pra continuar ganhando de menos.</p>
-
-      <div class="recap-box">
-        <div class="recap-title">Resumindo o que você leva hoje por R$37:</div>
-        <ul>
-          <li>✓ Planilha completa (hora técnica + 29 serviços + peças + deslocamento)</li>
-          <li>✓ Kit Fechamento: modelo de orçamento + scripts WhatsApp <span class="free-tag">R$47 → GRÁTIS</span></li>
-          <li>✓ Acesso imediato + vitalício · Pagamento único</li>
-          <li>✓ Garantia de 7 dias</li>
-        </ul>
-        <div class="recap-price"><s>De R$97</s> → <strong>R$37</strong></div>
-      </div>
-
-      <a href="#precos" class="btn btn-primary btn-large">
-        QUERO PRECIFICAR CERTO →
-      </a>
-      <p class="micro">🔒 Compra segura Hotmart · 💳 Pix e cartão · ⚡ Acesso imediato</p>
+      <h2>Seu próximo orçamento pode ser o primeiro cobrado certo.</h2>
+      <p>Ou pode ser mais um serviço pago do seu bolso.</p>
+      <a href="#precos" class="btn btn-primary btn-large">QUERO COBRAR CERTO →</a>
     </div>
   </section>
 
-  <!-- ==========================================
-       RODAPÉ
-  ========================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">TIAGO SHEIK</div>
-      <p class="footer-tagline">Ferramentas e gestão para técnicos que querem mandar no próprio negócio.</p>
-      <div class="footer-social">
-        <a href="https://instagram.com/tiagooliveiratecnico" target="_blank" rel="noopener noreferrer">Instagram (@tiagooliveiratecnico)</a>
-        <a href="https://www.youtube.com/results?search_query=tiago+sheik+tecnico" target="_blank" rel="noopener noreferrer">YouTube</a>
-      </div>
-      <div class="footer-legal">
-        © 2026 Tiago Sheik. Todos os direitos reservados.<br />
-        Compra processada com segurança pela Hotmart.<br />
-        <a href="#">Termos de Uso</a>
-        <a href="#">Política de Privacidade</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==========================================
-       STICKY MOBILE CTA
-  ========================================== -->
-  <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-text"><s>R$97</s> <strong>R$37</strong> · Kit grátis hoje</div>
-    <a href="#precos" class="btn btn-primary">
-      Ver opções — a partir de R$ 9,90
-    </a>
-  </div>
-
-  <!-- ==========================================
-       SOCIAL PROOF POPUP
-  ========================================== -->
-  <div class="sp-popup" id="spPopup" role="status" aria-live="polite">
-    <button class="sp-close" id="spClose" aria-label="Fechar aviso">×</button>
-    <div class="sp-avatar" id="spAvatar">C</div>
-    <div class="sp-content">
-      <div class="sp-title"><strong id="spName">Carlos · Fortaleza/CE</strong> <span class="sp-verified">✓ verificada</span></div>
-      <div class="sp-desc">comprou <strong id="spProduct">Planilha + Kit Fechamento</strong></div>
-      <div class="sp-time" id="spTime">há 2 min · via Pix</div>
-    </div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fechar">×</button>
+    <img id="lightboxImg" src="" alt="" />
   </div>
 
   <script src="script.js"></script>

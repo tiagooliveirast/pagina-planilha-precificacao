@@ -39,6 +39,38 @@ document.addEventListener('DOMContentLoaded', function () {
     link.href = url.toString();
   });
 
+  /* ── Lightbox da galeria ── */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('[data-lightbox-src]').forEach(function (item) {
+    item.addEventListener('click', function () {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = item.getAttribute('data-lightbox-src');
+      lightboxImg.alt = item.getAttribute('data-lightbox-alt') || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+  }
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeLightbox();
+  });
+
 
 
 });
